@@ -1,4 +1,4 @@
-package com.example.pattern.factory;
+package com.example.pattern.simplefactory;
 
 /**
  * @author zhangliang
@@ -6,6 +6,6 @@ package com.example.pattern.factory;
  */
 public interface Milk {
 
-    public String getMilk();
+    public String getName();
 
 }
