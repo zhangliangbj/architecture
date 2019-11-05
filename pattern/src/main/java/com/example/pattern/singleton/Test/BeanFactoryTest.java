@@ -1,12 +1,13 @@
-package com.gupaoedu.vip.pattern.singleton.test;
+package com.example.pattern.singleton.Test;
 
-import com.gupaoedu.vip.pattern.singleton.lazy.LazyOne;
-import com.gupaoedu.vip.pattern.singleton.register.BeanFactory;
+
+import com.example.pattern.singleton.register.BeanFactory;
 
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Created by Tom on 2018/3/8.
+ * @author zhangliang
+ * @date 2019/11/5
  */
 public class BeanFactoryTest {
     public static void main(String[] args) {

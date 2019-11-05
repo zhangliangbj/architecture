@@ -6,4 +6,7 @@ package com.example.pattern.singleton.register;
  * @date 2019/11/5 10:36
  */
 public enum RegisterEnum {
+    INSTANCE;
+    public void getInstance(){};
+
 }

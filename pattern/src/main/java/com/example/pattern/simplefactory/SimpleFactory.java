@@ -1,4 +1,4 @@
-package com.example.pattern.simplefactory.impl;
+package com.example.pattern.simplefactory;
 
 import com.example.pattern.Mengniu;
 import com.example.pattern.Milk;

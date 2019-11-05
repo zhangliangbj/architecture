@@ -1,4 +1,4 @@
-package com.example.pattern.singleton;
+package com.example.pattern.singleton.hungry;
 
 /**
  * @author zhangliang

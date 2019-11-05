@@ -1,4 +1,4 @@
-package com.example.pattern.simplefactory;
+package com.example.pattern;
 
 /**
  * @author zhangliang

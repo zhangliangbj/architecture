@@ -1,7 +1,8 @@
-package com.gupaoedu.vip.pattern.singleton.test;
+package com.example.pattern.singleton.Test;
 
 /**
- * Created by Tom on 2018/3/8.
+ * @author zhangliang
+ * @date 2019/11/5
  */
 public class Pojo {
 }

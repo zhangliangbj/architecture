@@ -1,11 +1,13 @@
-package com.gupaoedu.vip.pattern.singleton.test;
+package com.example.pattern.singleton.Test;
 
-import com.gupaoedu.vip.pattern.singleton.lazy.LazyThree;
+
+import com.example.pattern.singleton.lazy.LazyThree;
 
 import java.lang.reflect.Constructor;
 
 /**
- * Created by Tom on 2018/3/8.
+ * @author zhangliang
+ * @date 2019/11/5
  */
 public class LazyThreeTest {
 

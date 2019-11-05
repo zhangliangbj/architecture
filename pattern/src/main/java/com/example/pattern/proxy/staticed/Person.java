@@ -6,4 +6,12 @@ package com.example.pattern.proxy.staticed;
  * @date 2019/11/5 14:52
  */
 public interface Person {
+
+    public void findLove();
+
+    public void buySomthing();
+
+    public void zhuFang();
+
+
 }
