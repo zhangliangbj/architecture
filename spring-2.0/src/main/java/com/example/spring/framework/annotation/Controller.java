@@ -1,4 +1,4 @@
-package com.example.spring.annotation;
+package com.example.spring.framework.annotation;
 
 import java.lang.annotation.*;
 
