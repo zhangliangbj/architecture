@@ -1,11 +1,15 @@
 package com.example.spring.framework.context;
 
+import com.example.spring.framework.annotation.Autowried;
+import com.example.spring.framework.annotation.Controller;
+import com.example.spring.framework.annotation.Service;
 import com.example.spring.framework.beans.BeanDefinition;
 import com.example.spring.framework.beans.BeanPostProcessor;
 import com.example.spring.framework.beans.BeanWrapper;
 import com.example.spring.framework.context.support.BeanDefinitionReader;
 import com.example.spring.framework.core.BeanFactory;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,6 +71,36 @@ public class ZLApplicationContext implements BeanFactory {
 
 
     }
+
+    public void populateBean(String beanName,Object instance){
+        Class clazz = instance.getClass();
+        if (!(clazz.isAnnotationPresent(Controller.class)||clazz.isAnnotationPresent(Service.class))){
+            return;
+        }
+
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field field:fields) {
+            if (!field.isAnnotationPresent(Autowried.class)){
+                continue;
+            }
+            Autowried autowried = field.getAnnotation(Autowried.class);
+            String autowiredBeanName = autowried.value().trim();
+
+            if ("".equals(autowiredBeanName)){
+                autowiredBeanName = field.getType().getName();
+            }
+            field.setAccessible(true);
+            try {
+                field.set(instance,this.beanWrapperMap.get(autowiredBeanName).getWrappedInstance());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+    }
+
 
     //真正的将我们的BeanDefinitions注册到beanDefinitionMap中
     private void doRegisty(List<String> beanDefinitions){
@@ -132,6 +166,9 @@ public class ZLApplicationContext implements BeanFactory {
 
         //在实例初始化后调用一次
         beanPostProcessor.postProcessAfterInitialization(instance,beanName);
+
+
+        populateBean(beanName,instance);
 
         //通过这样调用，相当于给我们自己留有了可操作的空间
         return this.beanWrapperMap.get(beanName).getWrappedInstance();
