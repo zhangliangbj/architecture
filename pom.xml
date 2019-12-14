@@ -8,6 +8,9 @@
     <artifactId>architecture</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>dubbo-server-provider</module>
+        <module>dubbo-server-api</module>
+    </modules>
 
 </project>
